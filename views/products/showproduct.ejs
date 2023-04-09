@@ -1,0 +1,41 @@
+
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Product Name - Product Page</title>
+      <link rel="stylesheet" href="/css/style2.css">
+    </head>
+    <body>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="/productlist">Accueil</a></li>
+            <li><a href="/productlist">Produits</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div class="product">
+          <% for (const product of products) { %>
+          <div class="product-image">
+            <img src="/<%= product.url %>" style="width: auto; height: auto;" alt="Product Image">
+          </div>
+          <div class="product-details">
+           
+            <h1 class="product-title"><%= product.title_product %></h1>
+            <p class="product-description"><%= product.description_product  %></p>
+            <p class="product-price"><%= product.prix  %> Dhs + Free Shipping</p>
+            
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <% } %>
+        </div>
+      </main>
+      <footer>
+        <p>&copy; 2023 - FAMMS</p>
+      </footer>
+    </body>
+  </html>
+
