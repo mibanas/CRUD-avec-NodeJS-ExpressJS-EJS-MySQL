@@ -24,16 +24,22 @@
    <body>         
       <section class="why_section layout_padding">
         <div class="container">
-        
+
+
            <div class="row">
               <div class="col-lg-8 offset-lg-2">
                  <div class="full">
-                       <form action="addproduct" method="post">
+                       <form action="addproduct" method="POST">
                           <fieldset>
-                             <input type="text" placeholder="Product name" name="product" required />
-                             <input type="number" placeholder="Price" name="price" required />
+                             <input type="text" placeholder="Product name" name="product"  />
+                             <% if(error) { %> 
+                                 <div class="alter alter-danger">
+                                    <%= error.message %>
+                                 </div>
+                              <% } %>
+                             <input type="number" placeholder="Price" name="price"  />
                              <input type="text" placeholder="Image" name="image" />
-                             <textarea placeholder="Description" name="description" required></textarea>
+                             <textarea placeholder="Description" name="description" ></textarea>
                              <input type="submit" value="Submit" />
                           </fieldset>
                        </form>
